@@ -15,7 +15,16 @@ public class HeroScript : MonoBehaviour {
         animator = transform.GetComponent<Animator>();
         characterController = transform.GetComponent<CharacterController>();
         Invoke("startGame", 0.2f);
-	}
+
+        //Event.registerEvent("1",(Event.EventCallBackData data) =>
+        //{
+        //    Debug.Log("事件1回调");
+        //});
+        //Event.registerEvent("2", (Event.EventCallBackData data) =>
+        //{
+        //    Debug.Log("事件2回调");
+        //});
+    }
 
     void startGame()
     {
@@ -115,7 +124,6 @@ public class HeroScript : MonoBehaviour {
 
     public void Atk1_End()
     {
-        Debug.Log("Atk1_End");
         setHeroState(Consts.HeroState.idle);
         canMove = true;
         isAtking = false;
@@ -123,7 +131,6 @@ public class HeroScript : MonoBehaviour {
 
     public void Atk2_End()
     {
-        Debug.Log("Atk2_End");
         setHeroState(Consts.HeroState.idle);
         canMove = true;
         isAtking = false;
@@ -131,7 +138,6 @@ public class HeroScript : MonoBehaviour {
 
     public void Atk3_End()
     {
-        Debug.Log("Atk3_End");
         setHeroState(Consts.HeroState.idle);
         canMove = true;
         isAtking = false;
@@ -139,7 +145,6 @@ public class HeroScript : MonoBehaviour {
 
     public void Atk4_End()
     {
-        Debug.Log("Atk4_End");
         setHeroState(Consts.HeroState.idle);
         canMove = true;
         isAtking = false;
@@ -147,7 +152,8 @@ public class HeroScript : MonoBehaviour {
 
     public void setHeroState(Consts.HeroState _state)
     {
-        Debug.Log(_state + "   " + state);
+        //Debug.Log(_state + "   " + state);
+
         if(_state == state)
         {
             return;
